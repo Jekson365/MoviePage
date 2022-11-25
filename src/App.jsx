@@ -1,6 +1,8 @@
 import { useState } from 'react'
 import { Home } from './pages/Home'
-import { BrowserRouter, HashRouter } from 'react-router-dom'
+import { BrowserRouter, HashRouter, Route, Routes } from 'react-router-dom'
+import { Login } from './pages/Login'
+import { Register } from './pages/Register'
 
 
 function App() {
@@ -9,7 +11,11 @@ function App() {
   return (
     <>
       <HashRouter>
-        <Home />
+        <Routes>
+          <Route path={'/'} element={<Home />} />
+          <Route path={'/login'} element={<Login />} />
+          <Route path={'/register'} element={<Register />} />
+        </Routes>
       </HashRouter>
     </>
 
