@@ -68,7 +68,7 @@ export const Highestscore = () => {
                 return (
                   <>
                   
-                    <SwiperSlide className='st-slide positon-relative' style={{ 'backgroundImage': `url('${ImagePath + item.poster_path}')` }}>
+                    <SwiperSlide className='st-slide shadow positon-relative' style={{ 'backgroundImage': `url('${ImagePath + item.poster_path}')` }}>
                         <div className="cover position-absolute w-100 bottom-0">
                           <h1 className='text-white fs-3'>{item.name}</h1>
                           <p className='text-white' style={{"fontSize":"13px"}}>{item.overview}</p>

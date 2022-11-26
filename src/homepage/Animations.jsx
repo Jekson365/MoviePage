@@ -70,7 +70,7 @@ export const Animations = () => {
               {each.map((item) => {
                 return (
                   <>
-                    <SwiperSlide className='st-slide' style={{ 'backgroundImage': `url('${ImagePath + item.poster_path}')` }}>
+                    <SwiperSlide className='st-slide shadow' style={{ 'backgroundImage': `url('${ImagePath + item.poster_path}')` }}>
                       <div className="cover position-absolute w-100 bottom-0">
                         <h1 className='text-white fs-3'>{item.name || item.title || item.original_title}</h1>
                         <p className='text-white' style={{ "fontSize": "13px" }}>{item.overview}</p>
