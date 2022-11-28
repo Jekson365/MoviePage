@@ -49,7 +49,7 @@ export const Mainslider = () => {
                     return (
                         <>
                             <SwiperSlide key={each.id} className='swiper-item-slide' style={{ "backgroundImage": `url(${ImagePath + each.backdrop_path})` }}>
-                                <Link style={{ "textDecoration": "none" }}>
+                                <Link style={{ "textDecoration": "none" }}  to={`/details/${each.media_type}/${each.id}`}>
                                     <div className="content d-flex flex-column align-items-start 
                                     justify-content-end w-md-75 w-75 p-5 h-100">
                                         <h1 className='fs-1 text-white'>{each.original_title || each.name}</h1>
@@ -67,11 +67,11 @@ export const Mainslider = () => {
     )
 }
 
-const Type = ({ lang, tp,score}) => {
+const Type = ({ lang, tp, score }) => {
     return (
         <>
             <div className="d-flex flex-row align-items-center">
-                <p className='text-white btn btn-success m-1' style={{"fontWeight":"bold"}}>{lang}</p>
+                <p className='text-white btn btn-success m-1' style={{ "fontWeight": "bold" }}>{lang}</p>
                 <p className='text-white btn btn-warning m-1'>{tp}</p>
                 <p className='text-white btn btn-danger m-1'>{Math.floor(score)}</p>
             </div>
