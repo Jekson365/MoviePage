@@ -23,7 +23,6 @@ export const Register = () => {
                 </form>
             </div>
             <Footer />
-
         </div>
     )
 }
