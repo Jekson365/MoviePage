@@ -9,7 +9,7 @@ export const Navbar = () => {
     return (
         <>
             <div className="container-fluid bg-dark d-flex align-items-center justify-content-between p-3">
-                <h3 className='h3 ncolor'>Jekson365</h3>
+                <h3 className='h3 ncolor dd'>Jekson365</h3>
                 <nav className='d-flex ml-2 nv bg-dark' >
                     <li className='m-3 nav-item ncolor'>
                         <Link to={"/"}>Home</Link>
@@ -24,7 +24,6 @@ export const Navbar = () => {
                         <Link to={"/discover"}>Discover</Link>
                     </li>
                 </nav>
-                <FaBeer className='ncolor close-icon' onClick={()=>setActive(!active)}/>
             </div>
         </>
     )

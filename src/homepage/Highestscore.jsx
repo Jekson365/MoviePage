@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { useEffect } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Autoplay } from 'swiper';
+import { Link } from 'react-router-dom';
 export const Highestscore = () => {
   const [data, setData] = useState([])
   const ImagePath = `https://image.tmdb.org/t/p/w500`
@@ -32,7 +33,7 @@ export const Highestscore = () => {
     for (var i = 1; i < 2; i++) {
       getDataFromApi(i)
     }
-  }, [])  
+  }, [])
 
 
   return (
@@ -41,7 +42,7 @@ export const Highestscore = () => {
         spaceBetween={50}
         slidesPerView={1}
         autoplay={{
-          delay:2500
+          delay: 2500
         }}
         className='mySwiper'
         style={{ 'height': "100%" }}
@@ -67,13 +68,12 @@ export const Highestscore = () => {
               {each.map((item) => {
                 return (
                   <>
-                  
                     <SwiperSlide className='st-slide shadow positon-relative' style={{ 'backgroundImage': `url('${ImagePath + item.poster_path}')` }}>
-                        <div className="cover position-absolute w-100 bottom-0">
-                          <h1 className='text-white fs-3'>{item.name}</h1>
-                          <p className='text-white' style={{"fontSize":"13px"}}>{item.overview}</p>
-                          <button className='btn btn-warning' style={{"fontWeight":"bold"}}>Watch</button>
-                        </div>
+                      <Link className="cover position-absolute w-100 bottom-0"  to={`/details/tv/${item.id}`}>
+                        <h1 className='text-white fs-3'>{item.name}</h1>
+                        <p className='text-white' style={{ "fontSize": "13px" }}>{item.overview}</p>
+                        <Link className='btn btn-warning' style={{ "fontWeight": "bold" }} to={`/details/tv/${item.id}`}>Watch</Link>
+                      </Link>
                     </SwiperSlide>
                   </>
                 )

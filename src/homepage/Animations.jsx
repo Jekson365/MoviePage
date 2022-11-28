@@ -1,6 +1,7 @@
 import React from 'react'
 import { useState } from 'react';
 import { useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { Autoplay } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react'
 
@@ -71,11 +72,13 @@ export const Animations = () => {
                 return (
                   <>
                     <SwiperSlide className='st-slide shadow' style={{ 'backgroundImage': `url('${ImagePath + item.poster_path}')` }}>
-                      <div className="cover position-absolute w-100 bottom-0">
+                      <Link to={`/details/movie/${item.id}`} className="cover position-absolute w-100 bottom-0">
                         <h1 className='text-white fs-3'>{item.name || item.title || item.original_title}</h1>
                         <p className='text-white' style={{ "fontSize": "13px" }}>{item.overview}</p>
-                        <button className='btn btn-warning' style={{ "fontWeight": "bold" }}>Watch</button>
-                      </div>
+                        <Link className='btn btn-warning' 
+                        to={`/details/movie/${item.id}`}
+                        style={{ "fontWeight": "bold" }}>Watch</Link>
+                      </Link>
                     </SwiperSlide>
                   </>
                 )

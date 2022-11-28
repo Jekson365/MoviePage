@@ -4,6 +4,7 @@ import { BrowserRouter, HashRouter, Route, Routes } from 'react-router-dom'
 import { Login } from './pages/Login'
 import { Register } from './pages/Register'
 import { Discover } from './discover/Discover'
+import { Details } from './pages/Details'
 
 
 function App() {
@@ -11,12 +12,14 @@ function App() {
   const BASE_URL = `https://api.themoviedb.org/3/movie/550?api_key=${API_KEY}`
   return (
     <>
-      <HashRouter>
+      <HashRouter basename='/'>
         <Routes>
           <Route path={'/'} element={<Home />} />
           <Route path={'/login'} element={<Login />} />
-          <Route path={'/register'} element={<Register />} />
+          <Route path={'/Registration'} element={<Register />} />
           <Route path={'/discover'} element={<Discover/>}/>
+          <Route path={'/details/movie/:id'} element={<Details/>}/>
+          <Route path={'/details/tv/:id'} element={<Details/>}/>
         </Routes>
       </HashRouter>
     </>
