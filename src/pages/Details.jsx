@@ -1,9 +1,10 @@
 import { cssNumber, each } from 'jquery'
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
-import {Footer} from '../components/Footer'
+import { Footer } from '../components/Footer'
 import { Navbar } from '../components/Navbar.jsx'
 import { useLocation } from 'react-router-dom'
+import { motion } from 'framer-motion'
 
 export const Details = () => {
 
@@ -47,10 +48,18 @@ export const Details = () => {
   return (
     <>
       <Navbar />
-      <div className='container-fluid d-cover d-flex align-items-center justify-content-center' style={{
-        "height": "100vh",
-        "backgroundImage": `url('${background != null ? ImagePath + data.poster_path : backdropPath + data.backdrop_path}')`
-      }}>
+      <motion.div
+
+
+        className='container-fluid d-cover d-flex align-items-center justify-content-center' style={{
+          "height": "100vh",
+          "backgroundImage": `url('${background != null ? ImagePath + data.poster_path : backdropPath + data.backdrop_path}')`
+        }}
+        initial={{ width: 0 }}
+        animate={{ width: window.innerWidth }}
+        exit={{ width: 0 }}
+      >
+
         <div className="container blr d-flex flex-row p-4 flex-wrap shadow">
           <div className="col-md-4 bg-danger h-100" style={{ "overflow": "hidden" }}>
             <img src={ImagePath + data.poster_path} className='w-100 h-100' style={{ "objectFit": "cover" }} />
@@ -66,8 +75,8 @@ export const Details = () => {
             </div>
           </div>
         </div>
-      </div>
-      <Footer/>
+      </motion.div>
+      <Footer />
     </>
   )
 }

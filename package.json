@@ -9,11 +9,11 @@
     "build": "vite build",
     "preview": "vite preview",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
-    "start": "npm start"
+    "deploy": "gh-pages -d build"
   },
   "dependencies": {
     "bootstrap": "^5.2.3",
+    "framer-motion": "^7.6.15",
     "jquery": "^3.6.1",
     "popper.js": "^1.16.1",
     "react": "^18.2.0",

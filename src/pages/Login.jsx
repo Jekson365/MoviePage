@@ -1,11 +1,16 @@
 import React from 'react'
 import { Footer } from '../components/Footer'
 import { Link } from 'react-router-dom'
+import { motion } from 'framer-motion'
 import { Navbar } from '../components/Navbar'
 
 export const Login = () => {
     return (
-        <div>
+        <motion.div
+            initial={{ width: 0 }}
+            animate={{ width: window.innerWidth }}
+            exit={{ width: 0 }}
+        >
             <Navbar />
             <div className="container-fluid w-100 d-flex flex-column 
             bg-dark align-items-center justify-content-center" style={{ "height": "100vh" }}>
@@ -22,6 +27,6 @@ export const Login = () => {
                 </form>
             </div>
             <Footer />
-        </div>
+        </motion.div>
     )
 }

@@ -12,6 +12,9 @@
 h1,h2,h3,h4,h5,h6 {
     color: white;
 }
+body {
+    overflow-x: hidden;
+}
 .overlay {
     position: absolute;
     top: 0;
@@ -45,7 +48,6 @@ a {
     background-position: center center;
     height: 350px;
 }
-
 .st-slide-2 {
     margin: 10px;
     width: 250px;
